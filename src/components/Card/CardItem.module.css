@@ -11,3 +11,8 @@
   width: 160px;
   height: 100px;
 }
+@media only screen and (max-width: 600px){
+  .CheckImg{
+    width: 100px;
+  }
+}

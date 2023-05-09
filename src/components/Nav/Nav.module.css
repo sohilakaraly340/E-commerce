@@ -19,7 +19,7 @@
    width: 25%;
 }
 .logo img{
-    width: 7%;
+    width: 40px;
     padding-left: 20px;
 }
 .list{
@@ -46,7 +46,7 @@
     height: 500px;
     width: 380px;
     left: -220px;
-    top: 45px;
+    top: 42px;
     border: 2px solid #A16C55;
     color: black;
     overflow: auto;
@@ -65,5 +65,8 @@
 @media only screen and (max-width: 600px){
     .logo{
         width: 39%;
+    }
+    .cart{
+        display: none;
     }
 }

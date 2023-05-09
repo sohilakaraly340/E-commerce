@@ -8,6 +8,7 @@ import { Context } from "../Context/Context";
 import { ShoppingBagOutlined } from "@mui/icons-material";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Cart from "../cart/Cart";
+import { Stack } from "@mui/material";
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,20 +33,19 @@ export default function Nav() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box
-      className={styles.drawer}>
+      <Box className={styles.drawer}>
         {navItems.map((item) => (
           <NavLink to={item[1]}>
-            <Button key={item} sx={{color:"#A16C55"}}>
+            <Button key={item} sx={{ color: "#A16C55" }}>
               {item[0]}
             </Button>
           </NavLink>
         ))}
         <NavLink to="/cart">
-            <Button key="cart" sx={{color:"#A16C55"}}>
-              SHOPPING CART
-            </Button>
-          </NavLink>
+          <Button key="cart" sx={{ color: "#A16C55" }}>
+            SHOPPING CART
+          </Button>
+        </NavLink>
       </Box>
     </Box>
   );
@@ -60,52 +60,53 @@ export default function Nav() {
       <Box
         className={styles.list}
         sx={{
-          display: { xs: "none", sm: "flex" }
+          display: { xs: "none", sm: "flex" },
         }}
       >
         {navItems.map((item) => (
-          <NavLink to={item[1]} >
-            <Button key={item} sx={{color:"rgb(255, 247, 247)"}} >
+          <NavLink to={item[1]}>
+            <Button key={item} sx={{ color: "rgb(255, 247, 247)" }}>
               {item[0]}
             </Button>
           </NavLink>
         ))}
       </Box>
 
-      <Box
-        sx={{ display: { xs: "none", sm: "block" } }}
-        onMouseEnter={() => setCartPopup(true)}
-        onMouseLeave={() => setCartPopup(false)}
-      >
-        <Link to="cart">
-          <Box style={{ position: "relative" }}>
-            <ShoppingBagOutlined
-              fontSize="large"
-              style={{
-                color: "#A16C55",
-              }}
-            />
-            <Box className={styles.bage}>{CartItems.length}</Box>
-
-            {cartPupup ? (
-              <Box className={styles.cart}>
-                <Cart />
-              </Box>
-            ) : (
-              ""
-            )}
-          </Box>
-        </Link>
-      </Box>
-
-      <Box display="flex" justifyContent="flex-end" mr="30px">
+      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{width:{xs:"35%" ,sm:"10%" }}}> 
         <Box
-          onClick={handleDrawerToggle}
-          sx={{ display: { sm: "none" }, cursor: "pointer", mt: "10px" }}
+          onMouseEnter={() => setCartPopup(true)}
+          onMouseLeave={() => setCartPopup(false)}
         >
-          <MenuIcon sx={{ color: "black" }} />
+          <Link to="cart">
+            <Box style={{ position: "relative" }}>
+              <ShoppingBagOutlined
+                fontSize="large"
+                style={{
+                  color: "#A16C55",
+                }}
+              />
+              <Box className={styles.bage}>{CartItems.length}</Box>
+
+              {cartPupup ? (
+                <Box className={styles.cart}>
+                  <Cart />
+                </Box>
+              ) : (
+                ""
+              )}
+            </Box>
+          </Link>
         </Box>
-      </Box>
+
+        <Box display="flex" justifyContent="flex-end" mr="30px">
+          <Box
+            onClick={handleDrawerToggle}
+            sx={{ display: { sm: "none" }, cursor: "pointer" }}
+          >
+            <MenuIcon sx={{ color: "black" }} fontSize="large" />
+          </Box>
+        </Box>
+      </Stack>
 
       <Drawer
         open={mobileOpen}
