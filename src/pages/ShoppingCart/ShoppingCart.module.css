@@ -1,0 +1,11 @@
+.cont{
+  padding: 200px 0 439px 0;
+  background-color: #ae755dd9;
+}
+.cards{
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #ffffff80;
+    padding: 20px 40px;
+    border-radius: 15px;
+}

@@ -1,0 +1,72 @@
+form{
+    margin:120px auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: rgb(161 108 85 / 78%);
+    border-radius: 15px;
+    color: white;
+}
+form label{
+    padding: 10px 0;
+}
+form input{
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+}
+.errors{
+    color: red;
+}
+form button{
+    width: 50%;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 30px auto;
+    cursor: pointer;
+    color: rgb(161 108 85 / 100%);
+    background-color: white;
+    font-size: 20px;
+}
+form button:hover{
+    transform: scale(1.08);
+}
+.popup__overlay.popup__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup__content {
+    background-color: rgb(161 108 85 / 100%);
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 88px;
+    width: 31%;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .popup__content h2 {
+    font-size: 44px;
+    margin-bottom: 10px;
+  }
+  .close{
+    position: absolute;
+    top: 19px;
+    right: 32px;
+    font-size: xxx-large;
+    cursor: pointer;
+  }
+  
+
