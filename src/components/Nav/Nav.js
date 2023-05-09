@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import styles from "./Nav.module.css";
 import { Context } from "../Context/Context";
@@ -14,9 +13,11 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [cartPupup, setCartPopup] = useState(false);
 
-  const navItems=[
-    ["HOME","/"],["PRODUCT","/product"],["CONTACT","/contact"]
-  ]
+  const navItems = [
+    ["HOME", "/"],
+    ["PRODUCT", "/product"],
+    ["CONTACT", "/contact"],
+  ];
 
   const { CartItems } = useContext(Context);
 
@@ -24,37 +25,50 @@ export default function Nav() {
     setMobileOpen((prevState) => !prevState);
   };
   const location = useLocation();
-  
-  const navbarStyle = {
-    backgroundColor: location.pathname === '/'  ? '' : 'rgb(161 108 85 / 78%)',
-  };
 
+  const navbarStyle = {
+    backgroundColor: location.pathname === "/" ? "" : "rgb(161 108 85 / 78%)",
+  };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Box>
+      <Box
+      className={styles.drawer}>
         {navItems.map((item) => (
-          <Box sx={{ textAlign: "center" }}>{item}</Box>
+          <NavLink to={item[1]}>
+            <Button key={item} sx={{color:"#A16C55"}}>
+              {item[0]}
+            </Button>
+          </NavLink>
         ))}
+        <NavLink to="/cart">
+            <Button key="cart" sx={{color:"#A16C55"}}>
+              SHOPPING CART
+            </Button>
+          </NavLink>
       </Box>
     </Box>
   );
   return (
     <Box className={styles.nav} style={navbarStyle}>
       <Box className={styles.logo}>
-        <img src="https://cdn-icons-png.flaticon.com/512/2415/2415292.png" alt="logo"/>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2415/2415292.png"
+          alt="logo"
+        />
       </Box>
       <Box
         className={styles.list}
         sx={{
-          display: { xs: "none", sm: "flex" },
+          display: { xs: "none", sm: "flex" }
         }}
       >
         {navItems.map((item) => (
-          <NavLink to={item[1]}><Button key={item} sx={{color:"white"}}>{item[0]}</Button></NavLink>
+          <NavLink to={item[1]} >
+            <Button key={item} sx={{color:"rgb(255, 247, 247)"}} >
+              {item[0]}
+            </Button>
+          </NavLink>
         ))}
       </Box>
 
@@ -89,7 +103,7 @@ export default function Nav() {
           onClick={handleDrawerToggle}
           sx={{ display: { sm: "none" }, cursor: "pointer", mt: "10px" }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ color: "black" }} />
         </Box>
       </Box>
 
