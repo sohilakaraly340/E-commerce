@@ -1,6 +1,7 @@
 {
   "name": "e-commerce",
   "version": "0.1.0",
+  "homepage": "http://sohilakaraly340.github.io/e-commerce", 
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -20,6 +21,8 @@
     "yup": "^1.1.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
