@@ -11,9 +11,9 @@ form{
 form label{
     padding: 10px 0;
 }
-form input{
+form input ,textarea{
     padding: 10px;
-    border-radius: 12px;
+    border-radius: 8px;
     border: none;
 }
 .errors{
@@ -72,6 +72,9 @@ form button:hover{
   form button{
     width: 70%;
     font-size: 13px;
+}.popup__content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 }
 

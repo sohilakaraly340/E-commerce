@@ -3,13 +3,13 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./Contact.module.css";
 import CloseIcon from '@mui/icons-material/Close';
-
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const initialValues = {
     name: "",
     email: "",
-    comments: "",
+    message: "",
   };
   
   const validationSchema = Yup.object({
@@ -20,9 +20,15 @@ export default function Contact() {
   const [submit, setSubmit] = useState(false);
 
   const onSubmit = (values, { resetForm }) => {
-    console.log(values);
-    resetForm({ values: "" });
-    setSubmit(true)
+    emailjs.sendForm('service_952121l', 'template_i3i356e', document.getElementById('form'), 'LpuzWvZjwAwGMJpwV')
+    .then((result) => {
+      console.log('Email sent successfully:', result.text);
+      resetForm({ values: "" });
+      setSubmit(true)
+    }, (error) => {
+      console.log('Error sending email:', error.text);
+    });
+   
   };
 
   return (
@@ -32,7 +38,7 @@ export default function Contact() {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      <Form>
+      <Form id="form">
         <label htmlFor="name">name</label>
         <Field type="text" id="name" name="name" placeholder="name" />
         <ErrorMessage name="name">
@@ -40,13 +46,13 @@ export default function Contact() {
         </ErrorMessage>
 
         <label htmlFor="email">E-mail</label>
-        <Field type="email" id="email" name="email" />
+        <Field type="email" id="email" name="email" placeholder="email" />
         <ErrorMessage name="email">
           {(e) => <div className={styles.errors}>{e}</div>}
         </ErrorMessage>
 
-        <label htmlFor="comments">comments</label>
-        <Field as="textarea" id="comments" name="comments" />
+        <label htmlFor="message">message</label>
+        <Field as="textarea" id="message" name="message" placeholder="message" />
 
         <button type="submit">Submit</button>
 
