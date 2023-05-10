@@ -41,7 +41,6 @@
 .cart{
     position: absolute;
     background-color: white;
-    padding: 10px;
     border-radius: 10px;
     height: 500px;
     width: 380px;
@@ -50,6 +49,7 @@
     border: 2px solid #A16C55;
     color: black;
     overflow: auto;
+    padding-bottom: 10px;
 }
 
 .cart::-webkit-scrollbar {
@@ -66,6 +66,9 @@
     .logo{
         width: 39%;
     }
+   
+}
+@media only screen and (max-width: 800px){
     .cart{
         display: none;
     }

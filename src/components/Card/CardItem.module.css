@@ -8,8 +8,9 @@
   transform: scale(1.08);
 }
 .CheckImg{
-  width: 160px;
+  width: 118px;
   height: 100px;
+  margin: 0 10px;
 }
 @media only screen and (max-width: 600px){
   .CheckImg{

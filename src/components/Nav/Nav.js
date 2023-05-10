@@ -72,7 +72,7 @@ export default function Nav() {
         ))}
       </Box>
 
-      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{width:{xs:"35%" ,sm:"10%" }}}> 
+      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{width:{xs:"35%" ,sm:"13%" }}}> 
         <Box
           onMouseEnter={() => setCartPopup(true)}
           onMouseLeave={() => setCartPopup(false)}
