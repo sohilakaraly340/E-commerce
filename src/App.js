@@ -18,7 +18,7 @@ function App() {
     <Provider>
       <Nav />
       <Routes>
-        <Route path="/" exact element={<Home />} />
+        <Route exact path="/"  element={<Home />} />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/product" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
