@@ -63,7 +63,7 @@ export default function Contact() {
       <div className={styles.popup__overlay}>
         <div className={styles.popup__content}>
           <CloseIcon onClick={() => setSubmit(false)} className={styles.close}/>
-          <h2>Thanks to Content us</h2>
+          <h2>Thanks for contacting us</h2>
         </div>
       </div>
     )}

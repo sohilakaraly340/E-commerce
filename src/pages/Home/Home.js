@@ -30,7 +30,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Fade>
+      <Fade duration={2500}>
         <Box className={styles.sec2}>
           <img src={wo} alt="womens" className={styles.wo} />
           <Stack direction="column">
@@ -50,21 +50,21 @@ export default function Home() {
             <h3>Special Discount & offers</h3>
           </Box>
           <Box className={styles.cont}>
-            <Fade direction="left">
+            <Fade direction="left" duration={2500}>
               <LocalShippingIcon className={styles.tag} />
             </Fade>
             <h3>Free Home Delivery</h3>
           </Box>
         </Stack>
         <Box className={styles.cont}>
-          <Rotate>
+          <Rotate duration={3500}>
             <CurrencyExchangeIcon className={styles.tag} />
           </Rotate>
           <h3>Money-back Guaranteed</h3>
         </Box>
         <Stack className={styles.col}>
           <Box className={styles.cont}>
-            <Fade duration={2500}>
+            <Fade duration={3500}>
               <VerifiedUserIcon className={styles.tag} />
             </Fade>
             <h3>Non-contact shipping</h3>
